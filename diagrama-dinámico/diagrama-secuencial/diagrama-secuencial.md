@@ -69,4 +69,4 @@ su correo y contraseña.
 ```
 
 ## Resultado
-![Resultado](diagrama-secuencial.png)
+![Resultado](img/diagrama-secuencial.png)
