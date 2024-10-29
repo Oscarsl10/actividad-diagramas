@@ -20,8 +20,7 @@ su correo y contraseña.
     Generación de Factura: Al confirmar la compra, se genera una factura con los detalles del pedido.
 
 ## Diagrama
-´´
-uml
+```plantuml
     @startuml
     actor Usuario
     participant Sistema
@@ -67,7 +66,7 @@ uml
     Usuario -> Sistema: Confirmar compra
     Sistema -> Usuario: Mostrar factura generada
     @enduml
-´´
+```
 
 ## Resultado
 ![Resultado](diagrama-secuencial.png)

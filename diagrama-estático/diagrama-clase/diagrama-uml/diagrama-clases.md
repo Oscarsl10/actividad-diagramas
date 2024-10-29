@@ -70,7 +70,7 @@ Factura "1" --> "*" DetalleFactura : "incluye"
 Usuario "1" --> "*" Factura : "realiza"
 
 @enduml
-
+```
 
 ## Diagrama de Clases
 ![Diagrama de Clases](img/umlclases.png)
