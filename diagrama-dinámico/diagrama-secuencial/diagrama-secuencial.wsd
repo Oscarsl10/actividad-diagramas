@@ -1,0 +1,45 @@
+@startuml
+actor Usuario
+participant Sistema
+
+== RF1: Registro e Inicio de Sesión ==
+Usuario -> Sistema: Solicita registro(correo, contraseña)
+Sistema -> Sistema: Verificar si el correo ya está registrado
+alt Correo disponible
+    Sistema -> Usuario: Registro exitoso
+else Correo ya registrado
+    Sistema -> Usuario: Mostrar error "Correo ya registrado"
+end
+
+Usuario -> Sistema: Solicita inicio de sesión(correo, contraseña)
+Sistema -> Sistema: Verificar datos de inicio de sesión
+alt Datos correctos
+    Sistema -> Usuario: Acceso concedido
+else Datos incorrectos
+    Sistema -> Usuario: Mostrar error "Datos incorrectos"
+end
+
+== RF2: Catálogo de Productos ==
+Usuario -> Sistema: Ver lista de productos
+Sistema -> Usuario: Mostrar lista de productos
+
+== RF3: Agregar Productos al Carrito ==
+Usuario -> Sistema: Seleccionar producto y cantidad
+Sistema -> Sistema: Verificar disponibilidad de stock
+alt Stock disponible
+    Sistema -> Usuario: Producto añadido al carrito
+else Sin stock suficiente
+    Sistema -> Usuario: Mostrar error "Sin stock suficiente"
+end
+
+== RF4: Gestión del Carrito ==
+Usuario -> Sistema: Ver carrito de compras
+Sistema -> Usuario: Mostrar productos en el carrito
+
+Usuario -> Sistema: Modificar/eliminar producto en el carrito
+Sistema -> Usuario: Confirmar cambios
+
+== RF5: Generar Factura ==
+Usuario -> Sistema: Confirmar compra
+Sistema -> Usuario: Mostrar factura generada
+@enduml
