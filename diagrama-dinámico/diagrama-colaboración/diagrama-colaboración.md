@@ -1,4 +1,4 @@
-# Diagrama de Colaboración (o Comunicación)
+# Diagrama de Colaboración (o Comunicación) del Sistema de Carrito de Compras
 - Oscar Guillermo Sierra Lozano.
 - Karen Johana Caicedo Arias.
 
