@@ -1,0 +1,29 @@
+@startuml
+actor Usuario
+participant Registro
+participant Sesion
+participant Catalogo
+participant Carrito
+participant Factura
+
+Usuario -> Registro: Registrar datos
+Registro -> Usuario: Confirmación/Error
+
+Usuario -> Sesion: Iniciar sesión
+Sesion -> Usuario: Acceso/Error
+
+Usuario -> Catalogo: Ver productos
+Catalogo -> Usuario: Mostrar productos
+
+Usuario -> Carrito: Agregar producto
+Carrito -> Usuario: Confirmación/Error
+
+Usuario -> Carrito: Ver carrito
+Carrito -> Usuario: Mostrar carrito
+
+Usuario -> Carrito: Modificar carrito
+Carrito -> Usuario: Confirmación
+
+Usuario -> Factura: Confirmar compra
+Factura -> Usuario: Factura generada
+@enduml
