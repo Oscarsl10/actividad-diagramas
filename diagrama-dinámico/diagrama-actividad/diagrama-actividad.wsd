@@ -1,0 +1,43 @@
+@startuml
+start
+
+:Registro de Usuario;
+-> Registro;
+if (Datos válidos?) then (Sí)
+  :Confirmación de Registro;
+else (No)
+  :Error en Registro;
+endif
+
+:Iniciar Sesión;
+-> Sesion;
+if (Credenciales válidas?) then (Sí)
+  :Acceso concedido;
+else (No)
+  :Error en Inicio de Sesión;
+endif
+
+:Ver Catálogo de Productos;
+-> Catalogo;
+:Mostrar Productos;
+
+:Seleccionar Producto;
+:Agregar al Carrito;
+-> Carrito;
+if (Producto disponible?) then (Sí)
+  :Producto agregado al carrito;
+else (No)
+  :Error en Agregar Producto;
+endif
+
+:Ver Carrito;
+:Modificar Cantidad o Eliminar Producto;
+:Confirmar Cambios;
+
+:Confirmar Compra;
+-> Factura;
+:Generar Factura;
+:Mostrar Factura;
+
+stop
+@enduml
