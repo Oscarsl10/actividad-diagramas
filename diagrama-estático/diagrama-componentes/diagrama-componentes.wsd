@@ -1,0 +1,24 @@
+@startuml
+
+package "Interfaz de Usuario" {
+    [index.html]
+    [styles.css]
+    [script.js]
+}
+
+package "Base de Datos" {
+    [MySQL]
+}
+
+package "Servicios Externos" {
+    [API de Pago]
+    [Servicio de Notificaciones por Correo]
+}
+
+[index.html] --> [MySQL] : "Consulta"
+[script.js] --> [API de Pago] : "Procesa Pago"
+[script.js] --> [Servicio de Notificaciones por Correo] : "Envía Notificación"
+
+@enduml
+
+
