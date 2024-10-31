@@ -4,7 +4,7 @@
 -Oscar Guillermo Sierra Lozano.
 
 ## Descripción General
-- Este diagrama de componentes simplificado representa la estructura física de un sistema de carrito de compras básico. Los componentes interactúan de forma directa, enfocándose en la interfaz de usuario y su conexión con la base de datos y servicios externos. Este diagrama facilita el entendimiento de los componentes básicos y su comunicación, sin la necesidad de un servidor de aplicación.
+- Este diagrama de componentes representa los elementos principales de un sistema de carrito de compras básico. Incluye la **Interfaz de Usuario** (con `index.html`, `styles.css`, y `script.js`), la **Base de Datos** en MySQL, y **Servicios Externos** como la API de Pago y el Servicio de Notificaciones por Correo. `script.js` interactúa con la base de datos para gestionar datos de usuarios, productos, e inventarios, y se comunica con servicios externos para procesar pagos y enviar notificaciones al usuario.
 
 ## Diagrama de Componentes
 A continuación se presenta el diagrama de componentes del sistema:
