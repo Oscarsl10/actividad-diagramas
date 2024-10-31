@@ -1,7 +1,9 @@
 # Documentación del Diagrama de Objetos del Sistema de Carrito de Compras
+-Karen Johana Caicedo Arias.
+-Oscar Guillermo Sierra Lozano.
 
-## Objetivo
-El objetivo de este documento es ilustrar una instancia específica del sistema de carrito de compras en un momento dado, utilizando un diagrama de objetos. Este diagrama muestra ejemplos de objetos (instancias) de las clases involucradas, sus valores de atributos y las relaciones activas entre ellos en un momento particular.
+## Descripción
+- El Diagrama de Objetos muestra instancias del sistema de carrito de compras. **Usuario_1** (Juan Pérez) tiene un **Carrito_1** que incluye **Producto_1** (Laptop) y **Producto_2** (Mouse), disponibles en **Inventario_1** y **Inventario_2**. Al confirmar la compra, se genera **Factura_1**, que incluye **DetalleFactura_1** y **DetalleFactura_2** con la cantidad y precio unitario de cada producto, ilustrando las interacciones del usuario con el sistema.
 
 ## Diagrama de Objetos
 A continuación se presenta el diagrama de objetos del sistema:
@@ -78,8 +80,7 @@ Factura_1 --> DetalleFactura_2 : "incluye"
 Usuario_1 --> Factura_1 : "realiza"
 
 @enduml
+```
 
-´´´
-# Resultado 
-
+## Resultado
 ![Diagrama de Objetos](img/diagrama-objetos.png)
