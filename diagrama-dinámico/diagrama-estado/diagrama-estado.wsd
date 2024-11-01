@@ -1,0 +1,44 @@
+@startuml
+[*] --> Registro : Inicio del proceso
+
+state Registro {
+  [*] --> IngresandoDatos : Datos de registro
+  IngresandoDatos --> RegistroConfirmado : Datos válidos
+  IngresandoDatos --> ErrorRegistro : Datos inválidos
+}
+
+RegistroConfirmado --> Sesion : Iniciar sesión
+
+state Sesion {
+  [*] --> IniciandoSesion : Credenciales
+  IniciandoSesion --> AccesoConcedido : Credenciales válidas
+  IniciandoSesion --> ErrorSesion : Credenciales inválidas
+}
+
+AccesoConcedido --> VerCatalogo : Acceso al catálogo
+
+state VerCatalogo {
+  [*] --> MostrandoProductos : Visualizar productos
+  MostrandoProductos --> ProductoSeleccionado : Seleccionar producto
+}
+
+ProductoSeleccionado --> Carrito : Agregar producto
+
+state Carrito {
+  [*] --> AgregandoProducto : Selección de cantidad
+  AgregandoProducto --> ProductoAgregado : Producto en stock
+  AgregandoProducto --> ErrorCarrito : Sin stock
+  ProductoAgregado --> ModificandoCarrito : Modificar cantidad/eliminar
+  ModificandoCarrito --> CarritoConfirmado : Confirmar cambios
+}
+
+CarritoConfirmado --> ConfirmacionCompra : Confirmar compra
+
+state ConfirmacionCompra {
+  [*] --> GenerandoFactura : Generación de factura
+  GenerandoFactura --> FacturaGenerada : Factura creada
+}
+
+FacturaGenerada --> [*] : Fin del proceso
+
+@enduml
