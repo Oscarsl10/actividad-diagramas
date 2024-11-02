@@ -1,0 +1,64 @@
+@startuml
+
+package "Usuarios" {
+  class Usuario {
+    - nombre: String
+    - correo: String
+    - contraseña: String
+    + registrarse(): void
+    + iniciarSesion(): boolean
+  }
+
+  class Sesion {
+    - estado: String
+    + iniciar(): void
+    + cerrar(): void
+  }
+
+  Usuario --> Sesion : "gestiona"
+}
+
+package "Productos" {
+  class Producto {
+    - id: Integer
+    - nombre: String
+    - descripcion: String
+    - precio: Float
+    - stock: Integer
+    + verCatalogo(): List<Producto>
+  }
+
+  class Inventario {
+    + verificarDisponibilidad(idProducto: Integer, cantidad: Integer): boolean
+  }
+
+  Producto --> Inventario : "mantiene"
+}
+
+package "Compras" {
+  class Carrito {
+    - items: List<DetalleCarrito>
+    + agregarProducto(producto: Producto, cantidad: Integer): void
+    + modificarCantidad(idProducto: Integer, cantidad: Integer): void
+    + verCarrito(): List<DetalleCarrito>
+  }
+
+  class DetalleCarrito {
+    - producto: Producto
+    - cantidad: Integer
+    - subtotal: Float
+  }
+
+  class Factura {
+    - detalles: List<DetalleCarrito>
+    + generarFactura(): void
+  }
+
+  Carrito --> DetalleCarrito : "contiene"
+  Factura --> DetalleCarrito : "contiene"
+}
+
+"Usuarios" --> "Compras" : "permite gestión de carrito"
+"Productos" --> "Compras" : "proporciona información de productos"
+
+@enduml
