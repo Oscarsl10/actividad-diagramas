@@ -69,3 +69,7 @@ Factura_1 --> DetalleFactura_2 : "incluye"
 Usuario_1 --> Factura_1 : "realiza"
 
 @enduml
+
+
+
+

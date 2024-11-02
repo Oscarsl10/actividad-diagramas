@@ -1,0 +1,17 @@
+@startuml
+node "Cliente" {
+    [Navegador]
+}
+
+node "Servidor Web" {
+    [Aplicación Carrito de Compras]
+}
+
+node "Servidor de Base de Datos" {
+    [Base de Datos]
+}
+
+[Cliente] --> [Aplicación Carrito de Compras] : Solicitudes HTTP
+[Aplicación Carrito de Compras] --> [Base de Datos] : Consultas y Actualizaciones
+@enduml
+
