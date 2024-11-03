@@ -1,0 +1,31 @@
+@startuml
+
+class Cliente {
+    + rol: "Comprador"
+    + estadoCuenta: String
+}
+
+
+class ItemCatalogo {
+    + disponibilidad: Boolean
+    + precioUnitario: Decimal
+}
+
+
+class CarroDeCompras  {
+    + totalCarrito: Decimal
+    + cantidadItems: Integer
+}
+
+class DocumentoFactura  {
+    + numeroFactura: String
+    + impuestoTotal: Decimal
+    + estadoPago: String
+}
+
+
+Cliente -- CarroDeCompras : "posee"
+CarroDeCompras -- ItemCatalogo : "tiene"
+CarroDeCompras -- DocumentoFactura : "genera al confirmar compra"
+
+@enduml
