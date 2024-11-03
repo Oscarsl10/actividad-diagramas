@@ -1,0 +1,52 @@
+@startuml
+    title Diagrama de Tiempo - Proceso de Carrito de Compras
+
+    participant Usuario
+    participant Sistema
+    participant Db
+
+    Usuario -> Sistema : Registrarse
+    activate Sistema
+    Sistema -> Db : Guardar datos
+    activate Db
+    Db --> Sistema : Confirmación
+    deactivate Db
+    Sistema --> Usuario : Registro exitoso
+    deactivate Sistema
+
+    Usuario -> Sistema : Iniciar sesión
+    activate Sistema
+    Sistema -> Db : Validar credenciales
+    activate Db
+    Db --> Sistema : Acceso permitido
+    deactivate Db
+    Sistema --> Usuario : Inicio de sesión exitoso
+    deactivate Sistema
+
+    Usuario -> Sistema : Ver catálogo de productos
+    activate Sistema
+    Sistema -> Db : Consultar catálogo
+    activate Db
+    Db --> Sistema : Productos disponibles
+    deactivate Db
+    Sistema --> Usuario : Mostrar catálogo
+    deactivate Sistema
+
+    Usuario -> Sistema : Agregar producto al carrito
+    activate Sistema
+    Sistema -> Db : Actualizar carrito
+    activate Db
+    Db --> Sistema : Confirmación de actualización
+    deactivate Db
+    Sistema --> Usuario : Producto agregado
+    deactivate Sistema
+
+    Usuario -> Sistema : Confirmar compra
+    activate Sistema
+    Sistema -> Db : Generar factura
+    activate Db
+    Db --> Sistema : Factura generada
+    deactivate Db
+    Sistema --> Usuario : Mostrar factura
+    deactivate Sistema
+@enduml
